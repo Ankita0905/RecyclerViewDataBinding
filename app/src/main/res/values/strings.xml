@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">RecyclerViewDataBinding</string>
+    
+    <string-array name="names">
+        <item>Ankita</item>
+        <item>Kamal</item>
+        <item>Karan</item>
+        <item>Sandeep</item>
+        <item>Honey</item>
+    </string-array>
+
+    <string-array name="emails">
+        <item>ankita@gmail.com</item>
+        <item>kamal@gmail.com</item>
+        <item>karan@gmail.com</item>
+        <item>sandeep@gmail.com</item>
+        <item>honey@gmail.com</item>
+    </string-array>
 </resources>
