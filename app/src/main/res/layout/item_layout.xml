@@ -17,43 +17,43 @@
         android:id="@+id/rootView">
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            app:civ_border_width="1dp"
-            app:civ_border_color="#FF000000"
+            android:id="@+id/pic"
+            android:layout_width="59dp"
+            android:layout_height="75dp"
             android:layout_marginLeft="15dp"
-            android:id="@+id/pic">
+            app:civ_border_color="#FF000000"
+            app:civ_border_width="1dp"
+            android:imageUrl="@{user.imageId}"
+            >
 
         </de.hdodenhof.circleimageview.CircleImageView>
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="75dp"
             android:layout_margin="15dp">
 
             <TextView
+                android:id="@+id/name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:textSize="16dp"
-                android:textStyle="bold"
-                android:id="@+id/name"
                 android:text="@{user.name}"
-                />
+                android:textSize="16dp"
+                android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/email"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginBottom="3dp"
-                android:layout_alignParentBottom="true"
                 android:layout_below="@+id/name"
+                android:layout_alignParentBottom="true"
                 android:layout_centerInParent="true"
-                android:textSize="12dp"
                 android:layout_marginTop="2dp"
-                android:textStyle="italic"
-                android:id="@+id/email"
+                android:layout_marginBottom="3dp"
                 android:text="@{user.email}"
-                />
+                android:textSize="12dp"
+                android:textStyle="italic" />
 
 
         </RelativeLayout>

@@ -1,11 +1,13 @@
 package com.example.recyclerviewdatabinding;
 
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Adapter;
 
 import androidx.annotation.NonNull;
+import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.recyclerviewdatabinding.databinding.ItemLayoutBinding;
@@ -16,7 +18,7 @@ import java.util.List;
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyViewHolder>
 {
     private Context context;
-    private List<Users> users=new ArrayList<>();
+    private List<Users> users;
 
     public RecyclerAdapter(Context context, List<Users> users)
     {
@@ -26,12 +28,22 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
 
     @NonNull
     @Override
-    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+
+       ItemLayoutBinding itemLayoutBinding= DataBindingUtil.inflate(
+               LayoutInflater.from(viewGroup.getContext())
+               ,R.layout.item_layout,viewGroup,false);
+
+       MyViewHolder myViewHolder=new MyViewHolder(itemLayoutBinding);
+
+        return myViewHolder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MyViewHolder viewHolder, int i)
+    {
+        Users user=users.get(i);
+        viewHolder.itemLayoutBinding.setUser(user);
 
     }
 
